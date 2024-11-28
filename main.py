@@ -11,6 +11,26 @@ class AI():
         pass
 
     def diálogo(self):
+        """
+        Como se trata do código principal, não há atributos inicialmente, pois
+        o código vai se moldando conforme o laço de repetição está funcionando.
+
+        No diálogo, o laço de repetição vai funcionar recebendo dados do usuário
+        e gerando assim uma interação com a IA
+
+        Args:
+            While True: O laço de recepção para o código ficar em um loop
+
+            pergunta (str): Recebe a pergunta do usuário a IA
+
+            IA (str): Quando a IA não souber o que responder, ou seja, quando a probilidade for baixa demais, ela pedirá ao usuário que ajude-a a responder da próxima vez.
+
+            
+        Returns:
+            probabilidade (float): Após a pergunta recebida, é feito um teste de comparação para se ter noção se a IA está preparada ou não para responder a pergunta
+
+            resposta (str): A resposta da IA já está tratada como string, apenas para ser usada
+        """
         evento = {}
         while True:
             pergunta = input("Você: ")
@@ -39,11 +59,28 @@ class AI():
                     
 
     def carregar_modelo(self):
+        """
+        Carrega o modelo já treinado em formato .pkl
+        """
         with open("Minha_IA.pkl", "rb") as arquivo:
             self.vetorizar, self.modelo, self.respostas_map = pickle.load(arquivo)
         return self.vetorizar, self.modelo, self.respostas_map
 
     def responder(self, pergunta):
+        """
+        Args:
+            pergunta (str): Recebe a pergunta do usuário
+
+            pergunta_vetorizada (str): Método para vetorizar a pergunta
+
+            predicao: Realizar a previsão da possível resposta
+
+            probabilidade: Pega números para se ter noção do quão preparada a IA está para a pergunta    
+        
+
+        Returns:
+            resposta (str): contém a reposta da IA
+            """
         pergunta_vetorizada = self.vetorizar.transform([pergunta])
         predicao = self.modelo.predict(pergunta_vetorizada)
         probabilidade = self.modelo.predict_proba(pergunta_vetorizada).max()
