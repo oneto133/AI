@@ -2,6 +2,10 @@ import csv
 import pandas as pd
 
 perguntas = []
+
+#Criado apenas para organizar os dados dentro do arquivo csv
+
+
 '''
 with open("resposta.csv", 'r', encoding='utf-8') as arquivo:
     leitor = csv.reader(arquivo)

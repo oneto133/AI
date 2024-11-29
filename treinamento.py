@@ -6,6 +6,18 @@ import csv
 class AI():
     def __init__(self):
 
+        """
+        Os arquivos csv de perguntas e respostas são lidos e todos os dados são colocados
+        dentro de suas listas correspondentes, em seguida as respostas são maepeadas e
+        indexadas
+
+        Args:
+            x: vetoriza as perguntas
+
+            modelo: recebe um regressão logistica para se obter a previsão de um resultado, usada para treinar a IA. O treino acontece com as perguntas e suas respostas correspondentes.
+            
+        """
+
         perguntas = []
         respostas = []
 
