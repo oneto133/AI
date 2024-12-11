@@ -4,7 +4,7 @@ import email.message
 def enviar_mensagem(email_remetente='rodriguesarmando225@gmail.com',
                     email_destinatario='allmyfilesondrive@gmail.com',
                     titulo=None,
-                    senha_de_app="pctvcerdlwekufbg",
+                    senha_de_app="nvezhiuvnucwvcde",
                     mensagem=None,
                     mensagem_final=None):
   """
@@ -45,9 +45,10 @@ def enviar_mensagem(email_remetente='rodriguesarmando225@gmail.com',
   s.starttls()
   s.login(msg['From'], password)
   s.sendmail(msg['From'], [msg['To']], msg.as_string().encode('utf-8'))
-  print("Email enviado")
+
 
 if __name__ == "__main__":
     enviar_mensagem()
+    print("Email enviado")
 
 

@@ -32,30 +32,32 @@ class AI():
             resposta (str): A resposta da IA já está tratada como string, apenas para ser usada
         """
         evento = {}
-        while True:
-            pergunta = input("Você: ")
-            vetorizar, modelo, respostas_map = self.carregar_modelo()  # Carrega o modelo a cada interação
-            resposta, probabilidade = self.responder(pergunta)
+        try:
+            while True:
+                pergunta = input("Você: ")
+                vetorizar, modelo, respostas_map = self.carregar_modelo()  # Carrega o modelo a cada interação
+                resposta, probabilidade = self.responder(pergunta)
 
-            if probabilidade < 0.00540:
-                print("Ainda não fui treinado para responder a essa pergunta")
-                print(probabilidade)
-                IA = input("Adicione o que eu devo responder para essa pergunta... ")
-                dado.perguntas(pergunta)  # Atualiza o modelo com a nova pergunta e resposta
-                dado.resposta(IA)
-                AI()
-            else:
-                if resposta == "O que você não entendeu?":
-                    print(f"IA: {resposta}\nVocê me perguntou '{evento['usuário']}' \nE eu respondi \n'{evento['IA']}'\n"
-                    "Fique a vontade para tirar suas dúvidas")
-                else:
-                    evento.clear()
-                    evento['usuário'] = pergunta
-                    evento['IA'] = resposta
-                    print("IA: ", resposta)
+                if probabilidade < 0.00540:
+                    print("Ainda não fui treinado para responder a essa pergunta")
                     print(probabilidade)
-                    enviar_mensagem("Teste IA", resposta)
-                    
+                    IA = input("Adicione o que eu devo responder para essa pergunta... ")
+                    dado.perguntas(pergunta)  # Atualiza o modelo com a nova pergunta e resposta
+                    dado.resposta(IA)
+                    AI()
+                else:
+                    if resposta == "O que você não entendeu?":
+                        print(f"IA: {resposta}\nVocê me perguntou '{evento['usuário']}' \nE eu respondi \n'{evento['IA']}'\n"
+                        "Fique a vontade para tirar suas dúvidas")
+                    else:
+                        evento.clear()
+                        evento['usuário'] = pergunta
+                        evento['IA'] = resposta
+                        print("IA: ", resposta)
+                        print(probabilidade)
+                        enviar_mensagem(titulo="Teste IA", mensagem=resposta, mensagem_final="")
+        except Exception as e:
+            print(e)
                     
 
     def carregar_modelo(self):
