@@ -53,17 +53,35 @@ Carrega o modelo já treinado que está no arquivo [Minha_IA.pkl](Minha_IA.pkl)
 
 O treinamento acontece dentro do arquivo [treinamento.py](treinamento.py) e lá é gerado o arquivo .pkl, pois é o melhor formato para a ia fazer reconhecimento dos dados treinados.
 
-treinamento
-    Os arquivos csv de perguntas e respostas são lidos e todos os dados são colocados dentro de suas listas correspondentes, em seguida as respostas são maepeadas e indexadas
+* Treinamento
+Os arquivos csv de perguntas e respostas são lidos e todos os dados são colocados dentro de suas listas correspondentes, em seguida as respostas são maepeadas e indexadas
 
-        Args:
-            x: vetoriza as perguntas
+    Args:
+        x: vetoriza as perguntas
 
-            modelo: recebe um regressão logistica para se obter a previsão de um resultado, usada para treinar a IA. O treino acontece com as perguntas e suas respostas correspondentes.
+        modelo: recebe um regressão logistica para se obter a previsão de um resultado, usada para treinar a IA. O treino acontece com as perguntas e suas respostas correspondentes.
 
-    Após os dados são salvos no arquivo pickle com a função:
+Após, os dados são salvos no arquivo pickle com a função:
 
-        with open("Minha_IA.pkl", "wb") as arquivo:
-            pickle.dump((vetorizar, modelo, respostas_map), arquivo)
+    with open("Minha_IA.pkl", "wb") as arquivo:
+        pickle.dump((vetorizar, modelo, respostas_map), arquivo)
 
+
+* responder:
+Função que receberá a pergunta e fará uma previsão de comparação correspondente com a que o modelo já foi treinado.
+
+        def responder(self, pergunta):
+            Args:
+                pergunta (str): Recebe a pergunta do usuário
+
+                pergunta_vetorizada (str): Método para vetorizar a pergunta
+
+                predicao: Realizar a previsão da possível resposta
+
+                probabilidade: Pega números para se ter noção do quão preparada a IA está para a pergunta    
             
+
+            Returns:
+                resposta (str): contém a reposta da IA
+
+                
