@@ -14,3 +14,6 @@ Todas as dependências com suas versões compatíveis em -> `requeriments.txt`
 Versão do python para o projeto `Python 3.11`
 
 **A versão do python usada nesse projeto é a diferente da ultima versão, que se encontra até o momento na 3.13, pois a versão python que até o momento é compatível com o `skleanr`é a versão 3.11**
+
+Clone esse repositório em -> [Clique aqui](https://github.com/oneto133/AI.git)
+
