@@ -46,3 +46,24 @@ No diálogo, o laço de repetição vai funcionar recebendo dados do usuário e 
 
             resposta (str): A resposta da IA já está tratada como string, apenas para ser usada
 
+
+* carregar modelo:
+
+Carrega o modelo já treinado que está no arquivo [Minha_IA.pkl](Minha_IA.pkl)
+
+O treinamento acontece dentro do arquivo [treinamento.py](treinamento.py) e lá é gerado o arquivo .pkl, pois é o melhor formato para a ia fazer reconhecimento dos dados treinados.
+
+treinamento
+    Os arquivos csv de perguntas e respostas são lidos e todos os dados são colocados dentro de suas listas correspondentes, em seguida as respostas são maepeadas e indexadas
+
+        Args:
+            x: vetoriza as perguntas
+
+            modelo: recebe um regressão logistica para se obter a previsão de um resultado, usada para treinar a IA. O treino acontece com as perguntas e suas respostas correspondentes.
+
+    Após os dados são salvos no arquivo pickle com a função:
+
+        with open("Minha_IA.pkl", "wb") as arquivo:
+            pickle.dump((vetorizar, modelo, respostas_map), arquivo)
+
+            
