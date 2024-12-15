@@ -15,5 +15,34 @@ Versão do python para o projeto `Python 3.11`
 
 **A versão do python usada nesse projeto é a diferente da ultima versão, que se encontra até o momento na 3.13, pois a versão python que até o momento é compatível com o `skleanr`é a versão 3.11**
 
-Clone esse repositório em -> [Clique aqui](https://github.com/oneto133/AI.git)
+* Clone esse repositório
+
+```
+https://github.com/oneto133/AI.git
+```
+
+## main
+
+O arquivo principal deste programa onde será dado inicio as atividades do programa é o arquivo [main.py](main.py) esse arquivo contém a classe AI que é onde se terá as funções `diálogo`, `carregar_modelo` e `responder`.
+
+### Explicando as funções
+
+* diálogo:
+
+Como se trata do código principal, não há atributos inicialmente, pois o código vai se moldando conforme o laço de repetição está funcionando.
+
+No diálogo, o laço de repetição vai funcionar recebendo dados do usuário e gerando assim uma interação com a IA
+
+        Args:
+            While True: O laço de recepção para o código ficar em um loop
+
+            pergunta (str): Recebe a pergunta do usuário a IA
+
+            IA (str): Quando a IA não souber o que responder, ou seja, quando a probilidade for baixa demais, ela pedirá ao usuário que ajude-a a responder da próxima vez.
+
+            
+        Returns:
+            probabilidade (float): Após a pergunta recebida, é feito um teste de comparação para se ter noção se a IA está preparada ou não para responder a pergunta
+
+            resposta (str): A resposta da IA já está tratada como string, apenas para ser usada
 

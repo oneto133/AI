@@ -93,5 +93,7 @@ class AI():
             resposta = "Resposta não encontrada"
         return resposta, probabilidade
     
-ia = AI()
-ia.diálogo()
+
+if __name__ == "__main__":
+    ia = AI()
+    ia.diálogo()
