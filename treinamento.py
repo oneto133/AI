@@ -3,7 +3,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 import csv
 
-class AI():
+class Treinamento():
     def __init__(self):
 
         """
@@ -47,4 +47,4 @@ class AI():
         print("Treinado com sucesso")
 
 if __name__ == "__main__":
-    AI()
+    Treinamento()
